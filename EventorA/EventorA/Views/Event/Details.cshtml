@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNet.Identity
+@model EventorA.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Datalji Eventa</h2>
+
+<div>
+    <h4>Event</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Datum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Datum)
+        </dd>
+
+    </dl>
+</div>
+<p>
+@if (Request.IsAuthenticated & User.Identity.GetUserName() == "Admin")
+{
+    @Html.ActionLink("Izmijeni", "Edit", new { id = Model.EventID }) @:|
+    }
+    @Html.ActionLink("Prikazi listu Eventa", "Index")
+</p>

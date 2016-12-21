@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNet.Identity 
+@model IEnumerable<EventorA.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Eventa</h2>
+
+<p>
+    @Html.ActionLink("Kreiraj novi Event", "Create")
+</p>
+<table class="table table-striped table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Grad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Opis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Datum)
+        </th>
+
+        <th>Opcije</th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Naziv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Grad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adresa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Opis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Datum)
+        </td>
+        
+        <td>@if (Request.IsAuthenticated & User.Identity.GetUserName() == "Admin")
+{
+            @Html.ActionLink("Izmijeni", "Edit", new { id=item.EventID }) @:|
+            @Html.ActionLink("Izbrisi", "Delete", new { id=item.EventID }) @:|
+           
+} 
+        @Html.ActionLink("Detalji", "Details", new { id=item.EventID })
+        </td>
+        
+    </tr>
+}
+
+</table>

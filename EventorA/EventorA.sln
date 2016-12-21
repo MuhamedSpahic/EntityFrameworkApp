@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventorA", "EventorA\EventorA.csproj", "{08B7242B-A16E-4785-9236-D7FFBC0EE0BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventorA.Tests", "EventorA.Tests\EventorA.Tests.csproj", "{2BCCEE37-E69D-4FB9-B0E3-970D1582ADC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B7242B-A16E-4785-9236-D7FFBC0EE0BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B7242B-A16E-4785-9236-D7FFBC0EE0BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B7242B-A16E-4785-9236-D7FFBC0EE0BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B7242B-A16E-4785-9236-D7FFBC0EE0BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BCCEE37-E69D-4FB9-B0E3-970D1582ADC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BCCEE37-E69D-4FB9-B0E3-970D1582ADC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BCCEE37-E69D-4FB9-B0E3-970D1582ADC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BCCEE37-E69D-4FB9-B0E3-970D1582ADC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
