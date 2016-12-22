@@ -47,17 +47,19 @@ namespace EventorA.Controllers
                             };
 
             var MyViewModel = new PersonViewModel();
+            
             MyViewModel.PersonID = id.Value;
+            MyViewModel.Username = person.Username;
             MyViewModel.Ime = person.Ime;
             MyViewModel.Prezime = person.Prezime;
-            MyViewModel.Pasword = person.Pasword;
+           
 
             var MyEventList = new List<CheckEventViewModel>();
             foreach (var item in Rezultati)
             {
                 MyEventList.Add(new CheckEventViewModel { Id = item.EventID, Naziv = item.Naziv, Checked = item.Checked });
             }
-            MyViewModel.Eventi = MyEventList;
+            MyViewModel.Eventi=MyEventList;
             return View(MyViewModel);
 
         }
@@ -73,7 +75,7 @@ namespace EventorA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="PersonID,Ime,Prezime,Pasword")] Person person)
+        public ActionResult Create([Bind(Include="PersonID,Ime,Prezime,Username")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -113,8 +115,9 @@ namespace EventorA.Controllers
              var MyViewModel = new PersonViewModel();
              MyViewModel.PersonID = id.Value;
              MyViewModel.Ime = person.Ime;
+             MyViewModel.Username = person.Username;
              MyViewModel.Prezime = person.Prezime;
-             MyViewModel.Pasword = person.Pasword;
+            
 
              var MyEventList = new List<CheckEventViewModel>();
              foreach (var item in Rezultati)
@@ -137,7 +140,7 @@ namespace EventorA.Controllers
                 var MyPerson = db.People.Find(person.PersonID);
                 MyPerson.Ime = person.Ime;
                 MyPerson.Prezime = person.Prezime;
-                MyPerson.Pasword = person.Pasword;
+                MyPerson.Username = person.Username;
 
                 foreach (var item in db.PersonsToEvents)
                 {

@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
-@model EventorA.Models.Event
+@model EventorA.Models.EventViewModel
 
 @{
     ViewBag.Title = "Details";
@@ -49,6 +49,20 @@
 
         <dd>
             @Html.DisplayFor(model => model.Datum)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persons)
+        </dt>
+
+        <dd>
+            @foreach (var item in Model.Persons)
+            {
+                if (item.Checked)
+                {
+                    <div>@item.Ime </div>
+                 
+                }
+            }
         </dd>
 
     </dl>

@@ -15,7 +15,7 @@ namespace EventorA.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-       // private MyDBContext db = new MyDBContext();
+       private MyDBContext db = new MyDBContext();
         public AccountController()
             : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
@@ -83,7 +83,13 @@ namespace EventorA.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-
+                    Person p = new Person();
+                    p.Username = model.UserName;
+                    p.Ime = model.UserFirstName;
+                    p.Prezime = model.UserLastname;
+                   
+                    db.People.Add(p);
+                    db.SaveChanges();
                     await SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }

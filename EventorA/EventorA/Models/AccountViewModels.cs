@@ -49,6 +49,12 @@ namespace EventorA.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+        [Required]
+        [Display(Name = "User Firstname")]
+        public string UserFirstName { get; set; }
+        [Required]
+        [Display(Name = "User Lastname")]
+        public string UserLastname { get; set; }
        
 
         [Required]

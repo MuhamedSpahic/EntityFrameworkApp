@@ -1,4 +1,4 @@
-﻿@model EventorA.Models.Event
+﻿@model EventorA.Models.EventViewModel
 
 @{
     ViewBag.Title = "Edit";
@@ -56,6 +56,22 @@
                 @Html.ValidationMessageFor(model => model.Datum)
             </div>
         </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Persons, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @for (int i = 0; i < Model.Persons.Count(); i++)
+                {
+                    @Html.EditorFor(m => Model.Persons[i].Checked)
+                    @Html.DisplayFor(m => Model.Persons[i].Ime)
+
+                    @Html.HiddenFor(m => Model.Persons[i].Ime)
+                    @Html.HiddenFor(m => Model.Persons[i].Id)
+
+                }
+            </div>
+        </div>
+
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

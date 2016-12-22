@@ -16,8 +16,9 @@ namespace EventorA.Models
         [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}",
                ApplyFormatInEditMode = true)]
         public DateTime Datum { get; set; }
-
+       
         public virtual ICollection<PersonToEvent> PersonsToEvents { get; set; }
+
 
 
 

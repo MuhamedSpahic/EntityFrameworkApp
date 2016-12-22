@@ -10,7 +10,8 @@ namespace EventorA.Models
         public int PersonID { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string Pasword { get; set; }
+        public string Username { get; set; }
+
 
         public List<CheckEventViewModel> Eventi { get; set; }
     }

@@ -17,6 +17,7 @@ namespace EventorA.Models
     
         public MyDBContext() : base("name=MyDBContext")
         {
+
         }
 
         public System.Data.Entity.DbSet<EventorA.Models.Person> People { get; set; }
